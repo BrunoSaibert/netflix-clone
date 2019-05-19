@@ -1,33 +1,87 @@
-.App {
-  text-align: center;
+body,
+ul,
+li,
+p {
+  margin: 0px;
+  padding: 0px;
+  list-style: none;
+  font-family: Arial;
 }
 
-.App-logo {
-  animation: App-logo-spin infinite 20s linear;
-  height: 40vmin;
-  pointer-events: none;
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
+body {
+  background: #0f0f0f; 
   color: white;
 }
 
-.App-link {
-  color: #61dafb;
+img {
+  max-width: 100%;
+  display: block;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.list-title {
+    padding-left: 40px;
+    font-weight: bold;
+}
+
+.movies,
+.movies ul .movie-image,
+.movies ul .movie-content {
+  transition: transform 0.3s ease-out, opacity 0.3s ease-out;
+}
+
+.movies {
+  overflow: hidden;
+}
+
+.movies ul {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  overflow: auto;
+  padding: 50px 0 50px 0;
+}
+
+.movies ul li {
+  flex: 1 1 280px;
+  list-style-type: none;
+  padding: 5px;
+}
+
+.movies ul:hover .movie-image {
+  position: relative;
+  opacity: 0.3;
+  overflow: hidden;
+}
+
+.movies ul .movie-content {
+  position: absolute;
+  top: 0;
+  opacity: 0;
+}
+
+.movies ul .movie-image:hover .movie-content {
+  opacity: 1;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,.3); 
+}
+
+.movies ul .movie-image:hover {
+  transition: 0.3s transform ease-out;
+  z-index: 2;
+  transform: scale(1.5);
+  opacity: 1;
+}
+
+.movie-content h3 {
+  font-size: 0.8em;
+  padding: 20px;
+  margin: 0;
+}
+
+.movie-content p {
+  font-size: 0.6em;
+  line-height: 1.3;
+  padding: 0 20px 0;
+
 }
