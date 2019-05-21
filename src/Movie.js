@@ -7,6 +7,7 @@ const Movie = ({ id, titulo, overview, img }) => {
       <div className='movie-image'>
         <img src={`http://image.tmdb.org/t/p/w500/${img}`}/>
         <div className='movie-content'>
+          <div className='movie-play'>▶</div>
           <h3>{titulo}</h3>
           <p>{overview}</p>
         </div>
